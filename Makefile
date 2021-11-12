@@ -57,6 +57,8 @@ init_project:
 	@$(MAKE) create_env ENV_NAME="env_$(PROJECT_NAME)" PYTHON_VERSION="$(PYTHON_VERSION)"
 	@echo -e "${YELLOW}-> Creating folder $(PROJECT_NAME)${NC}"
 	@mkdir $(PROJECT_NAME) \
+	&& mkdir $(PROJECT_NAME)/tests  $(PROJECT_NAME)/notebooks \
+	&& touch $(PROJECT_NAME)/main.py \
 	&& echo -e "${YELLOW}-> Moving requirements.in in $(PROJECT_NAME)${NC}" \
 	&& mv requirements.in $(PROJECT_NAME) \
 	&& echo -e "${YELLOW}-> Writing boilerplate README.md in $(PROJECT_NAME)${NC}" \
